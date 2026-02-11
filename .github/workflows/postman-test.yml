@@ -1,0 +1,16 @@
+name: Postman CLI Run
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install Postman CLI
+        run: curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+
+      - name: Login and Run Collection
+        run: |
+          postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+          postman collection run 46633248-3a334666-8f2f-439a-8b62-6f7f37bda87f
