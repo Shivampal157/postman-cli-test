@@ -26,3 +26,4 @@ jobs:
       - name: Run Collection
         run: |
           postman collection run 46633248-3a334666-8f2f-439a-8b62-6f7f37bda87f -r cli,html
+          
